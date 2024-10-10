@@ -1,8 +1,17 @@
 const express = require('express');
 const mongoose = require('mongoose');
-
+const cors = require('cors')
 const app = express();
-app.use(express.json())
+app.use(express.json());
+app.use(cors({
+    origin: 'http://localhost:5173'
+ }));
+
+ app.use(cors({
+    origin: 'http://localhost:5173',
+    methods: 'GET,POST,PUT,DELETE',
+    allowedHeaders: 'Content-Type,Authorization'
+ }));
 
 // mongoose  connection 
 const mongoUrl = "mongodb+srv://sudharsan6078:123@cluster0.qvter.mongodb.net/";
@@ -38,8 +47,7 @@ app.delete("/del", async (req,res)=>{
 })
 
 
-
-app.get("/", async (req,res)=>{
+app.get("/get", async (req,res)=>{
 
     try{
         const users = await User.find();
