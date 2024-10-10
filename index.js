@@ -39,9 +39,16 @@ app.delete("/del", async (req,res)=>{
 
 
 
-// app.get("/", (req,res)=>{
-//     res.send("hello World asdasd")
-// })
+app.get("/", async (req,res)=>{
+
+    try{
+        const users = await User.find();
+        res.json(users)
+    }
+    catch(err){
+        res.status(400).json({message:err.message})
+    }
+})
 
 
 const port = 3000;
