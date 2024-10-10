@@ -50,8 +50,8 @@ app.delete("/del", async (req,res)=>{
 app.get("/get", async (req,res)=>{
 
     try{
-        const users = await User.find();
-        res.json(users);
+        const datata = await User.find();
+        res.json(datata);
     }
     catch(err){
         res.status(400).json({message:err.message});
