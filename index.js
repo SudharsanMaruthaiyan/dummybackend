@@ -52,7 +52,6 @@ app.get("/", async (req,res)=>{
     try{
         const datata = await User.find();
         res.json(datata);
-        console.log("hello")
     }
     catch(err){
         res.status(400).json({message:err.message});
