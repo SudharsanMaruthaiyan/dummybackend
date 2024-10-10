@@ -39,9 +39,9 @@ app.delete("/del", async (req,res)=>{
 
 
 
-app.get("/", (req,res)=>{
-    res.send("hello World")
-})
+// app.get("/", (req,res)=>{
+//     res.send("hello World asdasd")
+// })
 
 
 const port = 3000;
