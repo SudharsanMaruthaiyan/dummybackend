@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
-const cors = require('cors')
+const cors = require('cors');
 
 
 app.use(express.json());
@@ -50,7 +50,6 @@ app.post("/", async (req,res)=>{
 
 
 app.get("/", async (req,res)=>{
-    const userData = new User(req.params);
     try{
         const datata = await User.find();
         res.json(datata);
