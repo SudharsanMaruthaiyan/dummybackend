@@ -47,7 +47,7 @@ app.delete("/del", async (req,res)=>{
 })
 
 
-app.get("/", async (req,res)=>{
+app.get("/get", async (req,res)=>{
 
     try{
         const datata = await User.find();
