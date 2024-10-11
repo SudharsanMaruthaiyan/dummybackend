@@ -1,7 +1,9 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const cors = require('cors')
 const app = express();
+const cors = require('cors')
+
+
 app.use(express.json());
 app.use(cors({
     origin: 'http://localhost:5173'
@@ -54,12 +56,12 @@ app.get("/", async (req,res)=>{
         res.json(datata);
     }
     catch(err){
-        res.status(400).json({message:err.message});
+        res.status(400).json({message: err.message });
     }
 })
 
 
-const port = 3000;
-app.listen(port, ()=>{
-    console.log("Server ready")
+const PORT = 3000;
+app.listen(PORT, ()=>{
+    console.log(`Server running on port ${PORT}`);
 })
